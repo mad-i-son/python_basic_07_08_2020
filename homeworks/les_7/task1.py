@@ -40,6 +40,7 @@ def full_matrix(svar_list, ovar_list):
         matrix_string.append(full_matr)
     return matrix_string
 
+
 def add_matrix(svar_list, ovar_list):
     matr_string = []
     for ind_str, elem_str in enumerate(svar_list):
@@ -53,6 +54,7 @@ def add_matrix(svar_list, ovar_list):
         matr_string.append(new_matrix)
     return matr_string
 
+
 class Matrix:
 
     def __init__(self, var_list):
@@ -64,11 +66,10 @@ class Matrix:
              for line_idx, line in enumerate(self.var_list, 1)]) + "#"
         count_row = ''
         for ind in range(len(self.var_list[0])):
-            count_row += ' #' + str(ind+1) + '# '
+            count_row += ' #' + str(ind + 1) + '# '
         return f" {count_row}\n" + result + f"\n {count_row}\n"
 
     def __add__(self, other):
-
         matrix_string = full_matrix(self.var_list, other.var_list)
         matrix_string = add_matrix(matrix_string, self.var_list)
         matrix_string = add_matrix(other.var_list, matrix_string)
@@ -77,7 +78,6 @@ class Matrix:
 
 user_matrix1 = [[31, 22], [37, 43], [51, 86]]
 user_matrix2 = [[3, 5, 32], [2, 4, 6], [-1, 64, -8]]
-
 
 matr1 = Matrix(user_matrix1)
 # matr2 = Matrix(user_matrix2)

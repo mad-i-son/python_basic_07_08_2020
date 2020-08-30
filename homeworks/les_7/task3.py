@@ -32,6 +32,7 @@
 
 """
 
+
 class Cell:
     count_cell = 0
 
